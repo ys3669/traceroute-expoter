@@ -1,0 +1,22 @@
+# Traceroute Exporter Configuration
+server:
+  port: 9655
+
+monitoring:
+  interval: 60s      # traceroute execution interval
+  timeout: 30s       # overall timeout per traceroute
+  hop_timeout: 5s    # timeout per hop
+
+targets:
+  - host: "8.8.8.8"
+    name: "google-dns"
+    max_hops: 30
+    start_port: 33434
+  - host: "github.com"
+    name: "github"
+    max_hops: 20
+    start_port: 33434
+  - host: "1.1.1.1"
+    name: "cloudflare-dns"
+    max_hops: 25
+    start_port: 33434
